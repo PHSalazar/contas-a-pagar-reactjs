@@ -4,20 +4,26 @@ import {
   BreadcrumbLink,
   BreadcrumbList,
   BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb"
+} from "@/components/ui/breadcrumb";
 
-const BreadcrumbComponent = () => {
+const BreadcrumbComponent = ({ links }: { links: string[] }) => {
   return (
-  <Breadcrumb>
-    <BreadcrumbList>
-      <BreadcrumbItem>
-      <BreadcrumbLink href="/dashboard/">Início</BreadcrumbLink>
-      </BreadcrumbItem>
-      
-      <BreadcrumbSeparator />
-    </BreadcrumbList>
-  </Breadcrumb>
-  )
-}
+    <Breadcrumb>
+      <BreadcrumbList>
+        <BreadcrumbItem>
+          <BreadcrumbLink href="/dashboard/">Início</BreadcrumbLink>
+        </BreadcrumbItem>
 
-export default BreadcrumbComponent
+        <BreadcrumbSeparator />
+
+        {links.map((link) => (
+          <BreadcrumbItem>
+            <BreadcrumbLink>{link}</BreadcrumbLink>
+          </BreadcrumbItem>
+        ))}
+      </BreadcrumbList>
+    </Breadcrumb>
+  );
+};
+
+export default BreadcrumbComponent;

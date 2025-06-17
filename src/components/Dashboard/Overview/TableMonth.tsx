@@ -34,7 +34,7 @@ const TableMonth = () => {
         <TableBody>
           <TableRow>
             <TableCell>
-              <Link to="month/" className="underline">
+              <Link to="month?m=junho" className="underline">
                 Junho
               </Link>
             </TableCell>

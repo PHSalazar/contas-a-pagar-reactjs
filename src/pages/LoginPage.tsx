@@ -13,7 +13,7 @@ import { Label } from "@radix-ui/react-label";
 
 const LoginPage = () => {
   return (
-    <div className="h-screen w-full flex items-center justify-center">
+    <div className="h-screen w-full flex items-center justify-center bg-emerald-300">
       <Card className="w-full max-w-sm">
         <CardHeader>
           <CardTitle>Login</CardTitle>
@@ -38,7 +38,9 @@ const LoginPage = () => {
         <CardFooter>
           <div className="flex flex-col gap-2 w-full">
             <Button type="submit">Entrar</Button>
-            <Button variant="outline">Login com Google</Button>
+            <Button variant="outline" disabled>
+              Login com Google
+            </Button>
           </div>
         </CardFooter>
       </Card>
