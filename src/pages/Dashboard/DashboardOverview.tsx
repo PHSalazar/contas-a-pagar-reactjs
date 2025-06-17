@@ -1,9 +1,8 @@
-import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import ChartMonth from '@/components/Dashboard/Overview/ChartMonth'
+import { Card, CardContent, CardDescription, CardTitle } from '@/components/ui/card'
 import { Separator } from '@/components/ui/separator'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
 import { Calendar, DollarSign, FileCheck, History } from 'lucide-react'
-import React from 'react'
 
 const DashboardOverview = () => {
   return (
@@ -44,12 +43,12 @@ const DashboardOverview = () => {
 
       <Separator className='my-4' />
 
-      <section className='grid grid-cols-2 gap-6'>
-        <Card className='p-4'>
-            Olá
+      <section className='flex flex-wrap gap-6 sm:grid sm:grid-cols-2'>
+        <Card className='p-4 w-full'>
+            <ChartMonth />
         </Card>
 
-        <Card className='p-4'>
+        <Card className='p-4 w-full'>
             <h1 className='font-bold'>Meses</h1>
 
             <Table>
