@@ -6,7 +6,11 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 
-const BreadcrumbComponent = ({ links }: { links: string[] }) => {
+const BreadcrumbComponent = ({
+  links,
+}: {
+  links: (string | null | undefined)[];
+}) => {
   return (
     <Breadcrumb>
       <BreadcrumbList>

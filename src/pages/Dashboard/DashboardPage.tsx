@@ -8,7 +8,7 @@ function DashboardPage() {
     <Routes>
       <Route path="/" element={<DashboardLayout />}>
         <Route index element={<DashboardOverview />} />
-        <Route path="month" element={<DashboardViewMoth />} />
+        <Route path="month/:month?" element={<DashboardViewMoth />} />
       </Route>
     </Routes>
   );

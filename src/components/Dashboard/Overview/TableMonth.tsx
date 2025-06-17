@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import { Dialog, DialogHeader } from "@/components/ui/dialog";
 import {
   Table,
   TableBody,
@@ -9,12 +8,6 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import {
-  DialogContent,
-  DialogDescription,
-  DialogTitle,
-  DialogTrigger,
-} from "@radix-ui/react-dialog";
 import { Link } from "react-router-dom";
 import DialogNewMonth from "./DialogNewMonth";
 
@@ -34,7 +27,7 @@ const TableMonth = () => {
         <TableBody>
           <TableRow>
             <TableCell>
-              <Link to="month?m=junho" className="underline">
+              <Link to={`month/Junho`} className="underline">
                 Junho
               </Link>
             </TableCell>

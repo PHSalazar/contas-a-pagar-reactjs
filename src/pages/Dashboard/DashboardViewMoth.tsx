@@ -1,6 +1,7 @@
 import BillsTable from "@/components/BillTable/BillsTable";
 import BreadcrumbComponent from "@/components/BreadcrumbComponent";
 import ButtonNewBill from "@/components/ButtonNewBill";
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -9,19 +10,32 @@ import {
 } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Calendar, DollarSign, FileCheck, History } from "lucide-react";
-import { useSearchParams } from "react-router-dom";
+import { Link, useParams, useSearchParams } from "react-router-dom";
 
 const DashboardViewMoth = () => {
-  const [queryString] = useSearchParams();
-  let monthQueryString = queryString.get("m") || "";
-  monthQueryString =
-    monthQueryString.slice(0, 1).toUpperCase() +
-    monthQueryString.slice(1).toLowerCase();
+  const { month } = useParams();
+  const currentMonth = month;
+
+  if (!currentMonth) {
+    return (
+      <div className="p-2 flex flex-col gap-6 items-center justify-center">
+        <h1 className="font-extrabold text-xl text-stone-800 ">
+          Nenhum mês definido na rota.
+        </h1>
+        <h2 className="leading-0">
+          É necessário definir um mês para visualizar seu planejamento.
+        </h2>
+        <Button variant="default" className="w-fit">
+          <Link to="/dashboard">Ir ao Dashboard</Link>
+        </Button>
+      </div>
+    );
+  }
 
   return (
     <div className="p-2 flex flex-col gap-6">
       <p>
-        <BreadcrumbComponent links={[monthQueryString]} />
+        <BreadcrumbComponent links={[currentMonth]} />
       </p>
 
       <div className="flex flex-wrap gap-5 justify-around">
