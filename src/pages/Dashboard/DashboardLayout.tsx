@@ -3,8 +3,9 @@ import SidebarApp from "../SidebarApp";
 import { Input } from "@/components/ui/input";
 import ButtonProfile from "@/components/ui/button-profile";
 import ButtonNotifications from "@/components/ui/button-notifications";
+import { Outlet } from "react-router-dom";
 
-const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
+const DashboardLayout = () => {
   return (
     <div className="w-full">
       <SidebarProvider defaultOpen={true}>
@@ -27,7 +28,9 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
               <ButtonProfile />
             </div>
           </div>
-          {children}
+          
+
+          <Outlet />
         </main>
       </SidebarProvider>
     </div>
