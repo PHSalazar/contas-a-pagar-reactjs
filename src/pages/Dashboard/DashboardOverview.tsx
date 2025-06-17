@@ -1,48 +1,12 @@
 import ChartMonth from '@/components/Dashboard/Overview/ChartMonth'
-import { Card, CardContent, CardDescription, CardTitle } from '@/components/ui/card'
-import { Separator } from '@/components/ui/separator'
+import { Card } from '@/components/ui/card'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
-import { Calendar, DollarSign, FileCheck, History } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 const DashboardOverview = () => {
   return (
     <div className='p-4'>
-      <div className='flex flex-wrap gap-5 justify-around'>
-        <Card className='p-6 w-full w-[220px] h-fit gap-0 flex flex-row items-center relative overflow-hidden bg-stone-50'>
-            <DollarSign size="20" className='bg-stone-100 rounded-full w-[100px] h-[100px] absolute -left-5 -bottom-5 opacity-10' />
-            <CardContent className='z-10'>
-                <CardTitle className='scroll-m-20 font-extrabold tracking-tight text-balance text-xl '>R$983,99</CardTitle>
-                <CardDescription className='font-light'>todas as contas</CardDescription>
-            </CardContent>
-        </Card>
-
-        <Card className='p-6 w-full w-[220px] h-fit gap-0 flex flex-row items-center relative overflow-hidden bg-red-100'>
-            <History size="20" className='text-red-300 rounded-full w-[100px] h-[100px] absolute -left-5 -bottom-5' />
-            <CardContent className='z-10'>
-                <CardTitle className='scroll-m-20 font-extrabold tracking-tight text-balance text-xl'>R$983,99</CardTitle>
-                <CardDescription className='font-light'>todas as contas</CardDescription>
-            </CardContent>
-        </Card>
-
-        <Card className='p-6 w-full w-[220px] h-fit gap-0 flex flex-row items-center relative overflow-hidden bg-sky-200'>
-            <Calendar size="20" className='text-sky-100 rounded-full w-[100px] h-[100px] absolute -left-5 -bottom-5' />
-            <CardContent className='z-10'>
-                <CardTitle className='scroll-m-20 font-extrabold tracking-tight text-balance text-xl'>R$983,99</CardTitle>
-                <CardDescription className='font-light'>contas futuras</CardDescription>
-            </CardContent>
-        </Card>
-
-        <Card className='p-6 w-full w-[220px] h-fit gap-0 flex flex-row items-center relative overflow-hidden bg-emerald-200'>
-            <FileCheck size="20" className='text-emerald-100 rounded-full w-[100px] h-[100px] absolute -left-5 -bottom-5' />
-            <CardContent className='z-10'>
-                <CardTitle className='scroll-m-20 font-extrabold tracking-tight text-balance text-xl'>R$983,99</CardTitle>
-                <CardDescription className='font-light'>contas pagas</CardDescription>
-            </CardContent>
-        </Card>
-      </div>
-
-      <Separator className='my-4' />
-
+      
       <section className='flex flex-wrap gap-6 sm:grid sm:grid-cols-2'>
         <Card className='p-4 w-full'>
             <ChartMonth />
@@ -58,9 +22,13 @@ const DashboardOverview = () => {
                 </TableHeader>
                 <TableBody>
                     <TableRow>
-                        <TableCell>Junho</TableCell>
+                        <TableCell>
+                        <Link to="month/" className='underline'>Junho</Link>
+                        </TableCell>
                         <TableCell className='text-right'>R$ 989,99</TableCell>
+
                     </TableRow>
+                        
                     <TableRow>
                         <TableCell>Julho</TableCell>
                         <TableCell className='text-right'>R$ 989,99</TableCell>
